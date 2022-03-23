@@ -4,7 +4,7 @@ import numpy as np
 from Kassel_Archive_Table import df
 from ERHF_DArchive_TableEF1914 import df2
 
-#merge databases together to create one database
+#merge databases together to create one database (stretch feature list)
 
 NTTable = df.merge(df2, how='outer')
 
@@ -27,4 +27,3 @@ Recipient_Count = NTTable['Recipient'].value_counts().head(10)
 
 print(Recipient_Count)
 
-NTTable.groupby(['Recipient'])['Recipient'].count().columns

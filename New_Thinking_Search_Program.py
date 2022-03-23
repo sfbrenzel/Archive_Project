@@ -1,7 +1,5 @@
 import pandas as pd  
-import plotly.express as px
 import matplotlib.pyplot as plt
-
 from tabulate import tabulate
 
 
@@ -9,7 +7,7 @@ from tabulate import tabulate
 tdb = pd.read_csv('Tables/NTTable.csv')
 
 
-#search dictionary: for possible names, see NTTable.csv
+#search dictionary: for possible names to search, see NTTable.csv
 s_option_table = {1: 'Sender', 2: 'Recipient', 3: 'Date', 4: 'Archive'}
 
 #search function
@@ -19,16 +17,12 @@ def search(s_field):
     if len(search_a) > 0: 
         print(tabulate(search_a, headers='keys', tablefmt='fancy_grid'))
     else: 
-        print(f'{s_field} not found in database')
+        print(f'{s_field} not found in database') 
 
-
-#visual dictionary: for possible names, see NTTable.csv
-v_option_table = {1: 'Sender', 2: 'Recipient'}
 
 #visual function 
 def visual(): 
     top_ten_s = tdb.groupby(['Sender'])['Sender'].count().sort_values(ascending=False).head(10)
-    top_ten_r = tdb.groupby(['Recipient'])['Recipient'].count()
     top_ten_s.plot.pie()
     plt.show()
 
@@ -41,7 +35,9 @@ def s_menu():
     print('[4] Archive')
     print('[5] Exit')
 
+    
     s_option = int(input('enter your search option: '))
+
 
     while s_option != 5: 
         try: 
@@ -49,11 +45,14 @@ def s_menu():
             search(s_field)
         except KeyError:
             print('Invalid choice. Choose between options 1 and 5')
+        else: 
+            m_menu()
+            break 
+    
 
         print()      
         s_menu()
-
-
+    
 
 #main menu 
 def m_menu(): 
@@ -61,24 +60,30 @@ def m_menu():
     print('[2] Visualize Database')
     print('[3] Exit')
 
+   
     m_option = int(input('Choose search or visualize: '))
+
 
     while m_option != 3: 
         if m_option == 1: 
             s_menu()
+            break
         elif m_option == 2:
             visual()
+            break
         else: 
             print('Invalid choice. Choose options 1 or 2')
+            
 
         print()
         m_menu() 
-
+    
 
 #main function 
 def main(): 
   m_menu()
   print('Program Ended. Goodbye')
+  
 
 
 if __name__ == '__main__':
