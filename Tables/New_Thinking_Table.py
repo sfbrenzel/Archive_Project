@@ -27,3 +27,4 @@ Recipient_Count = NTTable['Recipient'].value_counts().head(10)
 
 print(Recipient_Count)
 
+NTTable.groupby(['Recipient'])['Recipient'].count().columns

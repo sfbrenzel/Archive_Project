@@ -1,57 +1,54 @@
 # Archive_Project
 
----Overview---
+Overview
 
-This repo contains some of the finding aids of the many archives belonging to the New Thinkers--a group of influental philosophers during the Weimar Republic in Germany 
-
-
----Scope--- 
-
-The New Thinkers have been called "professional letter writers"--their six or so archives containing thousands of letters written to each other and other notable thinkers during this era (including Freud, Benjamin, Tillich, Whitehead etc.). The aim of this project is to create a master list of all their correspondence so that researchers can search, track and visualize this unique correspodence  
+This repo contains some of the finding aids of the many archives belonging to the New Thinkers--a group of influental philosophers during the Weimar Republic in Germany. 
 
 
----Instructions---
+Scope 
 
-The Archive Project was built with (Python version and pip version). It contains two programs: a search program and a visualization program. 
-To run the search and visualization program: 
+The New Thinkers have been called "professional letter writers"--their archives containing thousands of letters written to each other and other notable thinkers during this era (including Freud, Benjamin, Tillich, Whitehead etc.). The aim of this project is to create a database for all their correspondence so that researchers can search, track and visualize this unique correspondence.  
 
----Install prerequisites---
+The Archive Project was built on a MacOS system with python 3.10.1 and pip 22.0.4 in visual studio code. 
 
-1) pip install pandas (search and visualization)
+How to run this program: 
 
-2) pip install tabulate (search)
+1) clone repo: https://github.com/sfbrenzel/Archive_Project.git
 
+2) create a virtual environment: python3 -m venv 
 
-Run Program 
+3) activate virtual environment: $ source venv/bin/activate 
 
-1) git clone link: 
+4) install requirements: python3 -m pip install -r requirements.txt 
 
-2) cd Archive_Project
-
-3) New_Thinking_Search_Program.py
-
-4) New_Thinking_Data_Analysis_Program.py
+5) Run Tables/New_Thinking_Search_Program.py
 
 
-
----Code Louisville Requirements--- 
+Code Louisville Requirements
 
 Category 1: Python Programming Basics:
 Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program.
 
-    New_Thinking_Search Program 
+The search program implements a master loop by asking users to input their search paramaters. It also allows them to exit the program.   
+
 
 Category 2: Utilize External Data:
 Read data from an external file, such as text, JSON, CSV, etc, and use that data in your application.
 
-    This project uses the finding aids of the Eugen Rosenstock-Huessy Digital Archive (excel sheets that have been converted to csv files) and the Universität Kassel's Rosenzweig Teilnachlass(pdf that has been converted to csv file). This data has been cleaned and merged into one new table using pandas in New_Thinking_Table.py
+This project uses the finding aids of the Eugen Rosenstock-Huessy Digital Archive (excel sheet that has been converted to a csv file) and the Universität Kassel's Rosenzweig Teilnachlass(pdf that has been converted to csv file). 
 
 Category 3: Data Display
 Visualize data in a graph, chart, or other visual representation of data.
 Display data in tabular form
 
+This project uses tabulate to create a table of search results. It also produces a pie chart  
+
 Category 4: Best Practices
 The program should utilize a virtual environment and document library dependencies in a requirements.txt file.
 
+This program does utilize a viritual environment and has a requirements.txt file. 
+
 Stretch Feature List 
 Use pandas, matplotlib, and/or numpy to perform a data analysis project. Ingest 2 or more pieces of data, analyze that data in some manner, and display a new result to a graph, chart, or other display.
+
+Each data set has been cleaned (see ERHF_DArchive_TableEF1914.py and Kassel_Archive_Table.py) and merged into one new table using pandas (see New_Thinking_Table.py). 
