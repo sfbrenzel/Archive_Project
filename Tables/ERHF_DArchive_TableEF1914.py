@@ -47,5 +47,5 @@ df2.drop_duplicates(subset='Date', keep = 'first', inplace = True)
 #Change index numbering 
 df2.index = range(len(df2))
 
-print(df2.head(5))
+
 

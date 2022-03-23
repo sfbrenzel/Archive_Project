@@ -40,6 +40,5 @@ df['Date'] = df['Date'].fillna(0)
 df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
 
 
-print(df.head(5))
 
 
