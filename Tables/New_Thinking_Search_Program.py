@@ -47,21 +47,17 @@ def s_menu():
     print('[4] Archive')
     print('[5] Exit')
 
-s_menu()
-s_option = int(input('enter your search option: '))
-
-while s_option != 5: 
-    try: 
-        s_field = s_option_table[s_option]
-        search(s_field)
-    except KeyError:
-        print('Invalid choice. Choose between options 1 and 5')
-
-    print()      
-    s_menu()
     s_option = int(input('enter your search option: '))
 
-print('Program Ended. Goodbye')
+    while s_option != 5: 
+        try: 
+            s_field = s_option_table[s_option]
+            search(s_field)
+        except KeyError:
+            print('Invalid choice. Choose between options 1 and 5')
+
+        print()      
+        s_menu()
 
 
 #visual menu 
@@ -70,21 +66,17 @@ def v_menu():
     print('[2] Recipient Last, First')
     print('[3] Exit')
 
-v_menu()
-v_option = int(input('enter your visualization option: '))
-
-while v_option != 3: 
-    try: 
-        v_field = v_option_table[v_option]
-        visual(v_field)
-    except KeyError: 
-        print('Invalid choice. Choose between options 1 and 3')
-
-    print()
-    v_menu()
     v_option = int(input('enter your visualization option: '))
 
-print('Program Ended. Goodbye')
+    while v_option != 3: 
+        try: 
+            v_field = v_option_table[v_option]
+            visual(v_field)
+        except KeyError: 
+            print('Invalid choice. Choose between options 1 and 3')
+
+        print()
+        v_menu()
 
 
 #main menu 
@@ -93,28 +85,24 @@ def m_menu():
     print('[2] Visualize Database')
     print('[3] Exit')
 
-m_menu() 
-m_option = int(input('Choose search or visualize: '))
+    m_option = int(input('Choose search or visualize: '))
 
-while m_option != 3: 
-    if m_option == 1: 
-        s_menu()
-    elif m_option == 2:
-        v_menu()
-    else: 
-        print('Invalid choice. Choose options 1 or 2')
+    while m_option != 3: 
+        if m_option == 1: 
+            s_menu()
+        elif m_option == 2:
+            v_menu()
+        else: 
+            print('Invalid choice. Choose options 1 or 2')
 
-    print()
-    m_menu() 
-    m_option = int(input('Choose search or visualize'))
+        print()
+        m_menu() 
 
-print('Program Ended. Goodbye')
 
 #main function 
 def main(): 
-  first_m = m_menu()
-  second_m = s_menu()
-  third_m = v_menu() 
+  m_menu()
+  print('Program Ended. Goodbye')
 
 
 if __name__ == '__main__':
