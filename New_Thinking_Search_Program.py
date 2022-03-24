@@ -70,6 +70,7 @@ def m_menu():
             break
         elif m_option == 2:
             visual()
+            m_menu()
             break
         else: 
             print('Invalid choice. Choose options 1 or 2')
