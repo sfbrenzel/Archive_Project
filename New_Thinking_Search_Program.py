@@ -7,7 +7,7 @@ from tabulate import tabulate
 tdb = pd.read_csv('Tables/NTTable.csv')
 
 
-#search dictionary: for possible names to search, see NTTable.csv
+#search dictionary: for possible names/dates/archives to search, see NTTable.csv
 s_option_table = {1: 'Sender', 2: 'Recipient', 3: 'Date', 4: 'Archive'}
 
 #search function
@@ -23,7 +23,7 @@ def search(s_field):
 #visual function 
 def visual(): 
     top_ten_s = tdb.groupby(['Sender'])['Sender'].count().sort_values(ascending=False).head(10)
-    top_ten_s.plot.pie()
+    top_ten_s.plot.pie(title='Breakdown of Database', figsize=[8,8], autopct='%.2f')
     plt.show()
 
 
