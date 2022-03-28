@@ -11,17 +11,35 @@ The New Thinkers have been called "professional letter writers" because their ar
 
 The Archive Project was built on a MacOS system with python 3.10.1 and pip 22.0.4 in visual studio code. 
 
+
 **How to run this program in a MacOS system:** 
 
 1. clone repo: https://github.com/sfbrenzel/Archive_Project.git
 
-2. create a virtual environment: python3 -m venv venv
+2. navigate to project: cd Archive_Project 
 
-3. activate virtual environment: $ source venv/bin/activate 
+3. create a virtual environment: python3 -m venv venv
 
-4. install requirements: python3 -m pip install -r requirements.txt 
+4. activate virtual environment: $ source venv/bin/activate 
 
-5. Run New_Thinking_Search_Program.py
+5. install requirements: python3 -m pip install -r requirements.txt 
+
+6. Run New_Thinking_Search_Program.py
+
+
+**How to run this program in a Windows System:**
+
+1. clone repo: https://github.com/sfbrenzel/Archive_Project.git
+
+2. navigate to project: cd Archive_Project
+
+3. create a virtual environment: py -m venv venv
+
+4. activate virtual environment: venv\scripts\activate.bat
+
+5. install requirements: pip install -r requirements.txt
+
+6. run project: py New_Thinking_Search_Program.py
 
 
 ## Code Louisville Requirements
