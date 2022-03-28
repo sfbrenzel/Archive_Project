@@ -36,7 +36,7 @@ def s_menu():
     print('[5] Exit')
 
     
-    s_option = int(input('enter your search option: '))
+    s_option = int(input('Enter selection: '))
 
 
     while s_option != 5: 
@@ -61,7 +61,7 @@ def m_menu():
     print('[3] Exit')
 
    
-    m_option = int(input('Choose search or visualize: '))
+    m_option = int(input('Enter selection: '))
 
 
     while m_option != 3: 
