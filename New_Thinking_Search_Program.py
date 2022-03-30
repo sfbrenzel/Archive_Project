@@ -43,12 +43,11 @@ def s_menu():
         try: 
             s_field = s_option_table[s_option]
             search(s_field)
-        except KeyError:
-            print('Invalid choice. Choose between options 1 and 5')
+        except (KeyError, ValueError):
+            print('Invalid entry. Choose between 1 and 5')
         else: 
             m_menu()
             break 
-    
 
         print()      
         s_menu()
@@ -64,7 +63,7 @@ def m_menu():
     m_option = int(input('Enter selection: '))
 
 
-    while m_option != 3: 
+    while True: 
         if m_option == 1: 
             s_menu()
             break
@@ -72,9 +71,12 @@ def m_menu():
             visual()
             m_menu()
             break
+        elif m_option == 3: 
+            print('Program ended. Goodbye')
+            exit()
         else: 
-            print('Invalid choice. Choose options 1 or 2')
-            
+            print('Invalid entry. Choose options 1 or 2')
+
 
         print()
         m_menu() 
