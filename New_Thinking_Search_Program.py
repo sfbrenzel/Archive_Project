@@ -7,7 +7,7 @@ from tabulate import tabulate
 tdb = pd.read_csv('Tables/NTTable.csv')
 
 
-#search dictionary: for possible names/dates/archives to search, see NTTable.csv
+#search dictionary: for possible names/dates/archives to search, see NTTable.csv or pie chart 
 s_option_table = {1: 'Sender', 2: 'Recipient', 3: 'Date', 4: 'Archive'}
 
 #search function
@@ -39,15 +39,17 @@ def s_menu():
     s_option = int(input('Enter selection: '))
 
 
-    while s_option != 5: 
-        try: 
-            s_field = s_option_table[s_option]
-            search(s_field)
-        except (KeyError, ValueError):
-            print('Invalid entry. Choose between 1 and 5')
-        else: 
+    while True: 
+        if s_option == 5:
             m_menu()
-            break 
+            break
+        else: 
+            try: 
+                s_field = s_option_table[s_option]
+                search(s_field)
+            except (KeyError, ValueError):
+                print('Invalid entry. Choose between 1 and 5')
+            
 
         print()      
         s_menu()
