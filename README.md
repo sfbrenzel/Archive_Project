@@ -46,10 +46,10 @@ The Archive Project was built on a MacOS system with python 3.10.1 and pip 22.0.
 
 **Category 1: Python Programming Basics:**
 Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program.  
-- See New_Thinking_Search_Program.py (lines: )
+- See New_Thinking_Search_Program.py
 
 Create a dictionary or list, populate it with several values, retrieve at least one value, and use it in your program.
-- See New_Thinking_Search_Program.py (lines: )
+- See New_Thinking_Search_Program.py
 
 **Category 2: Utilize External Data:**
 Read data from an external file, such as text, JSON, CSV, etc, and use that data in your application.
@@ -59,7 +59,7 @@ Read data from an external file, such as text, JSON, CSV, etc, and use that data
 **Category 3: Data Display**
 Visualize data in a graph, chart, or other visual representation of data.
 Display data in tabular form
-- See New_Thinking_Search_Program.py: program displays data in both tabular form and in a pie chart (lines:)
+- See New_Thinking_Search_Program.py: program displays data in both tabular form and in a pie chart
   
 
 **Category 4: Best Practices**
