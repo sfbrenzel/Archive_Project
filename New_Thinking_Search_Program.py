@@ -35,11 +35,11 @@ def s_menu():
     print('[4] Archive')
     print('[5] Exit')
 
-
-    s_option = int(input('Enter selection: '))
-    if s_option.isdigit() != True: 
-        raise ValueError('Invalid Entry. Choose between 1 and 5')
-
+    try:
+        s_option = int(input('Enter selection: '))
+    except ValueError:
+        print('Invalid entry. Choose between 1 and 5')
+        s_menu()
 
     while True: 
         if s_option == 5:
