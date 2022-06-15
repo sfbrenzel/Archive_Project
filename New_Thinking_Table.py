@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 
-from Kassel_Archive_Table import df
-from ERHF_DArchive_TableEF1914 import df2
+from Kassel_Archive_Cleaning import df
+from ERHFDA_Cleaning import df2
 
 #merge databases together to create one database (stretch feature list)
 

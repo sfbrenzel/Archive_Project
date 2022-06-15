@@ -4,7 +4,7 @@ from tabulate import tabulate
 
 
 #import data for data search 
-tdb = pd.read_csv('Tables/NTTable.csv')
+tdb = pd.read_csv('Merged_Tables/NTTable.csv')
 
 
 #search dictionary: for possible names/dates/archives to search, see NTTable.csv or pie chart 
