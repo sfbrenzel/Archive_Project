@@ -1,29 +1,45 @@
 import pandas as pd
 import numpy as np
 
-from Kassel_Archive_Cleaning import df
-from ERHFDA_Cleaning import df2
+pd.read_csv('Merged_Tables/ERHFDA Cleaned 6.22.22.csv')
+pd.read_csv('Merged_Tables/Kassel Cleaned 6.22.22.csv')
 
 #merge databases together to create one database (stretch feature list)
 
-NTTable = df.merge(df2, how='outer')
+erhdf1 = pd.read_csv('Merged_Tables/ERHFDA Cleaned 6.22.22.csv')
+kasseldf1 = pd.read_csv('Merged_Tables/Kassel Cleaned 6.22.22.csv')
+NTTable = pd.concat([erhdf1, kasseldf1])
 
-#reorder by date 
-NTTable = NTTable.sort_values(by='Date')
+#add columns
+NTTable.insert(6, 'Latitude', '')
+NTTable.insert(7, 'Longitude', '')
 
 #change index numbering 
 NTTable.index = range(len(NTTable))
 
+
 #check how many records are in the dataset 
-NTTable.info()
+#NTTable.info()
 
 #count number of unique senders in dataset
-Sender_Count = NTTable['Sender'].value_counts().head(10)
+#Sender_Count = NTTable['Sender'].value_counts().head(10)
 
-print(Sender_Count)
+#print(Sender_Count)
 
 #Count number of unique recipients in dataset 
-Recipient_Count = NTTable['Recipient'].value_counts().head(10)
+#Recipient_Count = NTTable['Recipient'].value_counts().head(10)
 
-print(Recipient_Count)
+#print(Recipient_Count)
+
+#drop first column 
+NTTable.drop(['Unnamed: 0'], axis=1, inplace=True) 
+
+#drop index 
+NTTable.set_index('Sender', inplace=True)
+
+#sort by sender 
+NTTable.sort_values('Sender', inplace=True)
+
+#Export to CV
+NTTable.to_csv('tableautest.csv')
 
