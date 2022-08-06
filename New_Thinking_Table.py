@@ -1,18 +1,14 @@
 import pandas as pd
 import numpy as np
 
-pd.read_csv('Merged_Tables/ERHFDA Cleaned 6.22.22.csv')
-pd.read_csv('Merged_Tables/Kassel Cleaned 6.22.22.csv')
+pd.read_csv('Cleaned_Tables/ERHFDA Cleaned 8.05.22.csv')
+pd.read_csv('Cleaned_Tables/Kassel Cleaned 6.22.22.csv')
 
 #merge databases together to create one database (stretch feature list)
 
-erhdf1 = pd.read_csv('Merged_Tables/ERHFDA Cleaned 6.22.22.csv')
-kasseldf1 = pd.read_csv('Merged_Tables/Kassel Cleaned 6.22.22.csv')
+erhdf1 = pd.read_csv('Cleaned_Tables/ERHFDA Cleaned 8.05.22.csv')
+kasseldf1 = pd.read_csv('Cleaned_Tables/Kassel Cleaned 6.22.22.csv')
 NTTable = pd.concat([erhdf1, kasseldf1])
-
-#add columns
-NTTable.insert(6, 'Latitude', '')
-NTTable.insert(7, 'Longitude', '')
 
 #change index numbering 
 NTTable.index = range(len(NTTable))
@@ -31,8 +27,13 @@ NTTable.index = range(len(NTTable))
 
 #print(Recipient_Count)
 
-#drop first column 
-NTTable.drop(['Unnamed: 0'], axis=1, inplace=True) 
+#drop columns 
+NTTable.drop(['Unnamed: 0', 'Archive.1', 'Rauner Item ID'], axis=1, inplace=True) 
+
+#add columns
+NTTable.insert(8, 'Duplicates?', '')
+NTTable.insert(10, 'Transcribed', '')
+NTTable.insert(11, 'Transcription Link', '')
 
 #drop index 
 NTTable.set_index('Sender', inplace=True)
@@ -41,5 +42,5 @@ NTTable.set_index('Sender', inplace=True)
 NTTable.sort_values('Sender', inplace=True)
 
 #Export to CV
-NTTable.to_csv('tableautest.csv')
+NTTable.to_csv('combinedarchives.csv')
 
